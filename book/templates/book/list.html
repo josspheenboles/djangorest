@@ -22,7 +22,7 @@ Book_List
             <td>
                 <a href="{%url 'book_details' book.name %}">show details</a>
                 <a href="">Update</a>
-                <a href="">Delete</a>
+                <a href="{%url 'book_delete' book.id %}">Delete</a>
             </td>
         </tr>
 
