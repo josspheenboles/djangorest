@@ -20,5 +20,6 @@ from book.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
+    path('Book/List', book_list,name='book_list'),
 
 ]
