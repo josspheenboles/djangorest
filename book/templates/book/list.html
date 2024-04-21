@@ -22,7 +22,7 @@
             <td>{{book.name}}</td>
             <td>{{book.latest_version}}</td>
             <td>
-                <a href="">show details</a>
+                <a href="{%url 'book_details' book.name %}">show details</a>
                 <a href="">Update</a>
                 <a href="">Delete</a>
             </td>

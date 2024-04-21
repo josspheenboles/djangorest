@@ -8,6 +8,9 @@ def hello(request):
 def book_list(request):
     books=Book.objects.all()
     return render(request,'book/list.html',context={'books':books})
+def book_details(request,name):
+    book=Book.objects.filter(name=name).first()
+    return render(request,'book/details.html',context={'book':book})
     # return HttpResponse(f'<h1>book_list </h1>')
 def book_add(request):
     # pythonbook=Book(name='python bible',latest_version=2)
