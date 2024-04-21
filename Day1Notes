@@ -4,8 +4,8 @@ django-admin startproject ecommerce
 cd ecommerce
 python manage.py startapp author
 python manage.py startapp book
-pip install mysqlclient
 python manage.py runserver 9000
-
+create database ecommerce
+pip install mysqlclient
 ==========Self Study========
 url--->slug,rpath,ascii,uuid
