@@ -22,13 +22,14 @@ def book_add(request):
     if (request.method == 'POST'):
         name = request.POST['name']
         version = request.POST['version']
-        if(name is not '' and isinstance(version,int)):
+        print(request.POST)
+        if(len(name) >0 and isinstance(int(version),int)):
             Book.objects.create(name=name, latest_version=version)
         # return HttpResponseRedirect('/Book/List')
-            return redirect('book_list')
+        #     return redirect('book_list')
+            return redirect(Book.get_list_url())
         else:
             context['msg']='kindly add name and version'
-
     return render(request,'book/add.html',context)
 def book_update(request,id):
     return HttpResponse(f'<h1>book_update {id}</h1>')
