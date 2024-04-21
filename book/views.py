@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from .models import *
 
 # Create your views here.
@@ -17,6 +17,11 @@ def book_add(request):
     # pythonbook.save()
     # javabook=Book.objects.create(name='java bible')
     # return HttpResponse('<h1>book_add</h1>')
+    if (request.method == 'POST'):
+        name = request.POST['name']
+        version = request.POST['version']
+        Book.objects.create(name=name, latest_version=version)
+        return HttpResponseRedirect('/Book/List')
     return render(request,'book/add.html')
 def book_update(request,id):
     return HttpResponse(f'<h1>book_update {id}</h1>')
