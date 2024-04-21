@@ -6,6 +6,11 @@
 </head>
 <body>
 <h1>Books</h1>
-{{books}}
+<!--{{books}}-->
+{%for book in books%}
+    {{book.id}}
+    {{book.name}}
+    {{book.latest_versions}}
+{%endfor%}
 </body>
 </html>
