@@ -7,10 +7,28 @@
 <body>
 <h1>Books</h1>
 <!--{{books}}-->
-{%for book in books%}
-    {{book.id}}
-    {{book.name}}
-    {{book.latest_versions}}
-{%endfor%}
+<table border="1" width="100%">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Version</td>
+        <td>Actions</td>
+    </tr>
+    {%for book in books%}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.latest_versions}}</td>
+            <td>
+                <a href="">show details</a>
+                <a href="">Update</a>
+                <a href="">Delete</a>
+            </td>
+        </tr>
+
+
+    {%endfor%}
+
+</table>
 </body>
 </html>
