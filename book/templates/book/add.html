@@ -3,5 +3,16 @@
         Book-Add
 {%endblock%}
 {%block content%}
-
+<form method="post">
+    <label>Name</label>
+    <input type="text" name="name">
+    </br>
+    <label>Latest Version</label>
+    <input type="number" name="version">
+    </br>
+    <label>Image</label>
+    <input type="file" name="image">
+    </br>
+    <input type="submit" value="Add">
+</form>
 {%endblock%}
