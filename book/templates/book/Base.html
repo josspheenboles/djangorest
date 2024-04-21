@@ -14,7 +14,12 @@
         <td colspan="9">Header</td>
     </tr>
     <tr>
-        <td colspan="2">menu</td>
+        <td colspan="2">
+            <a href="{%url 'book_add' %}">Add Book</a><br>
+            <a href="{%url 'book_list' %}"> Books</a><br>
+            <a href=""> Authors</a><br>
+            <a href=""> Add Author</a><br>
+        </td>
         <td colspan="7"> {%block content%}
         content
     {%endblock%}</td>

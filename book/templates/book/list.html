@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book</title>
-</head>
-<body>
+{%extends 'book/base.html' %}
+{%block title%}
+Book_List
+{%endblock%}
+{%block content%}
 <h1>Books</h1>
 <!--{{books}}-->
 <!--<a href="/Book/Add">Add</a>-->
-<a href="{%url 'book_add' %}">Add</a>
+
 <table border="1" width="100%">
     <tr>
         <td>ID</td>
@@ -32,5 +30,5 @@
     {%endfor%}
 
 </table>
-</body>
-</html>
+
+{%endblock%}

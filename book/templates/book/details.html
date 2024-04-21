@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%extends 'book/base.html' %}
+{%block title%}
+Book_Details
+{%endblock%}
+{%block content%}
+<h1>Books</h1>
 <table>
     <tr>
         <td>
@@ -26,6 +25,4 @@
             <img src="{{book.image}}"/>
         </td>
     </tr>
-</table>
-</body>
-</html>
+</table>{%endblock%}
