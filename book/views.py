@@ -18,13 +18,18 @@ def book_add(request):
     # pythonbook.save()
     # javabook=Book.objects.create(name='java bible')
     # return HttpResponse('<h1>book_add</h1>')
+    context={}
     if (request.method == 'POST'):
         name = request.POST['name']
         version = request.POST['version']
-        Book.objects.create(name=name, latest_version=version)
+        if(name is not '' and isinstance(version,int)):
+            Book.objects.create(name=name, latest_version=version)
         # return HttpResponseRedirect('/Book/List')
-        return redirect('book_list')
-    return render(request,'book/add.html')
+            return redirect('book_list')
+        else:
+            context['msg']='kindly add name and version'
+
+    return render(request,'book/add.html',context)
 def book_update(request,id):
     return HttpResponse(f'<h1>book_update {id}</h1>')
 def book_delete(request,id):
