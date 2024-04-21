@@ -7,5 +7,6 @@ python manage.py startapp book
 python manage.py runserver 9000
 create database ecommerce
 pip install mysqlclient
+python  manage.py makemigrations
 ==========Self Study========
 url--->slug,rpath,ascii,uuid
