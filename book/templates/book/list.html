@@ -7,7 +7,8 @@
 <body>
 <h1>Books</h1>
 <!--{{books}}-->
-<a href="/Book/Add">Add</a>
+<!--<a href="/Book/Add">Add</a>-->
+<a href="{%url 'book_add' %}">Add</a>
 <table border="1" width="100%">
     <tr>
         <td>ID</td>
@@ -19,7 +20,7 @@
         <tr>
             <td>{{book.id}}</td>
             <td>{{book.name}}</td>
-            <td>{{book.latest_versions}}</td>
+            <td>{{book.latest_version}}</td>
             <td>
                 <a href="">show details</a>
                 <a href="">Update</a>
