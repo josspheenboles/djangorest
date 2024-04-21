@@ -1,4 +1,5 @@
-#intro,structure,partial url,views,templates,model
+#intro,structure,partial url,views,templates,inheritance,model shell
+#show details,delete,update,list from db to template
 pip install django
 django-admin startproject ecommerce
 cd ecommerce
