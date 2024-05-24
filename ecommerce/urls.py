@@ -22,5 +22,6 @@ urlpatterns = [
     path('hello/', hello),
     path('Book/', include('book.urls')),
     path('Author/', include('author.urls')),
+path('api-auth/', include('rest_framework.urls')),  # for login/logout endpoints
 
 ]
