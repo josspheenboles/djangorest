@@ -1,1 +1,3 @@
 pip install django djangorestframework
+python manage.py makemigrations
+python manage.py migrate
