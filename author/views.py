@@ -4,7 +4,13 @@ from rest_framework.response import Response
 from .models import Author
 from .serializers import AuthorSerializer
 from rest_framework import generics, permissions
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .decorators import admin_required
 
+@admin_required
+def my_view(request):
+    return render(request, 'my_template.html')
 class AuthorListCreate(generics.ListCreateAPIView):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
@@ -16,6 +22,7 @@ class AuthorRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def author_list(request):
     if request.method == 'GET':
         authors = Author.objects.all()
