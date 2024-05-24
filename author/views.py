@@ -5,6 +5,16 @@ from .models import Author
 from .serializers import AuthorSerializer
 from rest_framework import generics, permissions
 
+class AuthorListCreate(generics.ListCreateAPIView):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+class AuthorRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 @api_view(['GET', 'POST'])
 def author_list(request):
     if request.method == 'GET':
