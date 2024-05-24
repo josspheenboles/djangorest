@@ -12,3 +12,5 @@ python  manage.py makemigrations
 python  manage.py migrate
 ==========Self Study========
 url--->slug,rpath,ascii,uuid
+template--->include
+views--->view set
