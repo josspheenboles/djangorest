@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Author
 from .serializers import AuthorSerializer
+from rest_framework import generics, permissions
 
 @api_view(['GET', 'POST'])
 def author_list(request):
